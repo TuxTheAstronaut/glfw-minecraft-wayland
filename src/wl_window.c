@@ -2355,8 +2355,10 @@ void _glfwRequestWindowAttentionWayland(_GLFWwindow* window)
 
 void _glfwFocusWindowWayland(_GLFWwindow* window)
 {
-    _glfwInputError(GLFW_FEATURE_UNAVAILABLE,
-                    "Wayland: The platform does not support setting the input focus");
+    // Ignore to prevent Minecraft from crashing
+    //_glfwInputError(GLFW_FEATURE_UNAVAILABLE,
+    //                "Wayland: The platform does not support setting the input focus");
+    fprintf(stderr, "Ignoring Error: Wayland: The platform does not support setting the input focus\n");
 }
 
 void _glfwSetWindowMonitorWayland(_GLFWwindow* window,
